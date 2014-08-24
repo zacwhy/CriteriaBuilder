@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Criteria Builder</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <script src="jquery.js" type="text/javascript"></script><!-- jquery-1.7.2 -->
+        <script src="script.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var fields =
+            [
+                { "name": "Boolean1", "type": "boolean", "display": "Boolean One" },
+                { "name": "Boolean2", "type": "boolean", "display": "Boolean Two" },
+                { "name": "Integer1", "type": "integer", "display": "Integer One" },
+                { "name": "Integer2", "type": "integer", "display": "Integer Two" },
+                { "name": "Date1",    "type": "date",    "display": "Date One" },
+                { "name": "Date2",    "type": "date",    "display": "Date Two" },
+                { "name": "String1",  "type": "string",  "display": "String One" },
+                { "name": "String2",  "type": "string",  "display": "String Two" },
+                { "name": "Enum1", "type": "enum", "display": "Enum One", "values": ["Value1_1", "Value1_2", "Value1_3"] },
+                { "name": "Enum2", "type": "enum", "display": "Enum Two", "values": ["Value2_1", "Value2_2", "Value2_3"] },
+                { "name": "All", "type": "boolean", "display": "All" },
+                { "name": "Any", "type": "integer", "display": "Any" },
+                { "name": "all", "type": "date", "display": "all" },
+                { "name": "any", "type": "string", "display": "any" }
+            ];
+
+            $(document).ready(function () {
+                $('#CriteriaBuilder').criteriaBuilder({
+                    fields: fields,
+                    onChange: function (value) {
+                        $('#CriteriaString').html(value);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="CriteriaBuilder"></div>
+        <div id="CriteriaString"></div>
+    </body>
+</html>
